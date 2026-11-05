@@ -1,0 +1,41 @@
+{
+  "$comment": "Single source of truth for the SDD stacked-PR policy. Read by the Copilot hook (local) and by the CI check (server). Changes to this file should be CODEOWNED by tech leads.",
+
+  "trunk": ["main", "master"],
+
+  "branchPattern": "^(?<feature>[a-z0-9][a-z0-9-]*)/(?<layer>spec|impl-\\d+(?:-[a-z0-9-]+)?|tests-\\d+(?:-[a-z0-9-]+)?)$",
+  "exemptBranchPatterns": ["^dependabot/", "^renovate/", "^hotfix/", "^release/", "^chore/"],
+
+  "specPaths": [
+    "specs/**",
+    "docs/superpowers/specs/**",
+    "docs/superpowers/plans/**",
+    "docs/adr/**"
+  ],
+  "implMayTouchSpecPaths": ["docs/superpowers/plans/**"],
+  "testPaths": [
+    "**/test/**",
+    "**/tests/**",
+    "**/__tests__/**",
+    "**/*.test.*",
+    "**/*.spec.ts",
+    "**/*.spec.js",
+    "**/*Test.java",
+    "**/*IT.java",
+    "**/test_*.py",
+    "**/*_test.go"
+  ],
+
+  "maxChangedLines": { "spec": 1500, "impl": 400, "tests": 600 },
+  "ignoreForSize": ["**/package-lock.json", "**/pnpm-lock.yaml", "**/*.lock", "**/*.snap", "**/generated/**"],
+
+  "minSpecApprovals": 1,
+
+  "agent": {
+    "blockPlainPrCreate": true,
+    "blockMerge": true,
+    "blockSelfApprove": true,
+    "enforceFileEdits": true,
+    "approvalCacheSeconds": 600
+  }
+}

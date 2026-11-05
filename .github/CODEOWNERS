@@ -1,0 +1,11 @@
+# Policy files: changes need a tech lead. Replace the team handle with yours.
+/.github/sdd-stack.json        @YOUR-ORG/tech-leads
+/.github/sdd-stack/            @YOUR-ORG/tech-leads
+/.github/hooks/                @YOUR-ORG/tech-leads
+/.github/workflows/sdd-stack.yml @YOUR-ORG/tech-leads
+/.github/skills/               @YOUR-ORG/tech-leads
+
+# Specs: product/tech leads approve the spec layer.
+/specs/                        @YOUR-ORG/spec-reviewers
+/docs/superpowers/specs/       @YOUR-ORG/spec-reviewers
+/docs/superpowers/plans/       @YOUR-ORG/spec-reviewers
